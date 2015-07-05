@@ -1,0 +1,23 @@
+<div data-behaviors="center" data-center-vertical="true">
+    <code data-behaviors="highlight" data-highlight-language="php">
+        function bubble_sort(array $items) {
+            $times = count($items);
+
+            while($times) {
+                for ($i = 1; $i < $times; $i++) {
+                    $prev = $items[$i - 1];
+                    $next = $items[$i];
+
+                    if ($prev > $next) {
+                        $items[$i] = $prev;
+                        $items[$i - 1] = $next;
+                    }
+                }
+
+                $times--;
+            }
+
+            return $items;
+        }
+    </code>
+</div>

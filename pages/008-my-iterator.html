@@ -1,0 +1,11 @@
+<div data-behaviors="center" data-center-vertical="true">
+    <code data-behaviors="highlight" data-highlight-language="php">
+        $iterator = new MyIterator(["foo", "bar", "baz"]);
+
+        foreach ($iterator as $key => $value) {
+            printf("%s: %s, ", $key, $value);
+        }
+
+        $iterator instanceof Traversable; # true
+    </code>
+</div>

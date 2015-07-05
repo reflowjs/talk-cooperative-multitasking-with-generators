@@ -1,0 +1,16 @@
+<div data-behaviors="center" data-center-vertical="true">
+    <code data-behaviors="highlight" data-highlight-language="php">
+        $document = new DOMDocument();
+        $document->loadXML("&lt;div&gt;&lt;/div&gt;");
+
+        $elements = $document->getElementsByTagName("div");
+
+        foreach ($elements as $key => $value) {
+            printf("%s: %s, ", $key, $value->nodeName);
+        }
+
+        is_array($elements); # false
+
+        $elements instanceof Traversable; # true
+    </code>
+</div>

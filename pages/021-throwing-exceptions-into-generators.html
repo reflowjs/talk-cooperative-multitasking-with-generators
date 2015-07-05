@@ -1,0 +1,18 @@
+<div data-behaviors="center" data-center-vertical="true">
+    <code data-behaviors="highlight" data-highlight-language="php">
+        $generator = bubble_sort([1, 6, 2, 5, 3, 4]);
+
+        $last = null;
+        $repeats = 0;
+
+        foreach ($generator as $items) {
+            $repeats = ($items == $last) ? $repeats + 1 : 0;
+
+            $last = $items;
+
+            if ($repeats >= count($items)) {
+                $generator->throw(new SortException());
+            }
+        }
+    </code>
+</div>

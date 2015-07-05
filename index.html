@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Reflow</title>
+        <link rel="stylesheet" href="reflow-silverstripe/highlight.8.3.css">
+        <link rel="stylesheet" href="reflow-silverstripe/silverstripe.css">
+    </head>
+    <body>
+        <div class="wrapper" data-behaviors="scale" data-scale-target=".content" data-scale-delay="250">
+            <div class="content"></div>
+        </div>
+        <script src="reflow-silverstripe/jquery.1.9.1.js"></script>
+        <script src="reflow-silverstripe/jquery.easing.1.3.js"></script>
+        <script src="reflow-silverstripe/jquery.transit.0.9.9.js"></script>
+        <script src="reflow-silverstripe/jgestures.0.9.js"></script>
+        <script src="reflow-silverstripe/highlight.8.3.js"></script>
+        <script src="reflow-silverstripe/jquery.fontspy.3.0.0.js"></script>
+        <script src="reflow-core/dist/reflow.js"></script>
+        <script>
+            fontSpy("latoregular", {
+                "glyphs"  : "a",
+                "success" : function() {
+                    reflow.updateBehaviors();
+                }
+            });
+
+            fontSpy("droid_sans_monoregular", {
+                "glyphs"  : "a",
+                "success" : function() {
+                    reflow.updateBehaviors();
+                }
+            });
+
+            var reflow = new Reflow({
+                "target"        : ".content",
+                "adapter"       : new Reflow.Adapter.jQuery(),
+                "preloadAhead"  : 1,
+                "preloadBehind" : 1,
+                "unloadAhead"   : 3,
+                "unloadBehind"  : 3,
+                "behaviors"     : {
+                    "animation-fade-in"   : new Reflow.Behavior.Animation.FadeIn(),
+                    "animation-fade-out"  : new Reflow.Behavior.Animation.FadeOut(),
+                    "animation-slide-in"  : new Reflow.Behavior.Animation.SlideIn(),
+                    "animation-slide-out" : new Reflow.Behavior.Animation.SlideOut(),
+                    "background"          : new Reflow.Behavior.Background(),
+                    "center"              : new Reflow.Behavior.Center(),
+                    "fit"                 : new Reflow.Behavior.Fit(),
+                    "highlight"           : new Reflow.Behavior.Highlight(),
+                    "scale"               : new Reflow.Behavior.Scale(),
+                    "swipe"               : new Reflow.Behavior.Swipe()
+                },
+                "pages" : [
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/001-cover.html"
+                        },
+                        "hash" : "cover"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/002-silverstripe.html"
+                        },
+                        "hash" : "silverstripe"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/003-write-asynchronous-code-without-extensions.html"
+                        },
+                        "hash" : "write-asynchronous-code-without-extensions"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/004-basic-arrays.html"
+                        },
+                        "hash" : "basic-arrays"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/005-dom-document.html"
+                        },
+                        "hash" : "dom-document"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/006-traversable.html"
+                        },
+                        "hash" : "traversable"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/007-iterator.html"
+                        },
+                        "hash" : "iterator"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/008-my-iterator.html"
+                        },
+                        "hash" : "my-iterator"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/009-my-iterator-aggregate.html"
+                        },
+                        "hash" : "my-iterator-aggregate"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/010-what-does-this-have-to-do-with-generators.html"
+                        },
+                        "hash" : "what-does-this-have-to-do-with-generators"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/011-example-reading-files.html"
+                        },
+                        "hash" : "example-reading-files"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/012-reading-files-iteratively.html"
+                        },
+                        "hash" : "reading-files-iteratively"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/013-reading-files-generatively.html"
+                        },
+                        "hash" : "reading-files-generatively"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/014-example-sorting-arrays.html"
+                        },
+                        "hash" : "example-sorting-arrays"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/015-how-bubble-sort-works.html"
+                        },
+                        "hash" : "how-bubble-sort-works"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/016-iterative-bubble-sort.html",
+                            "css"  : "pages/016-iterative-bubble-sort.css",
+                            "js"   : "pages/016-iterative-bubble-sort.js"
+                        },
+                        "hash" : "iterative-bubble-sort"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/017-generative-bubble-sort.html",
+                            "css"  : "pages/017-generative-bubble-sort.css",
+                            "js"   : "pages/017-generative-bubble-sort.js"
+                        },
+                        "hash" : "generative-bubble-sort"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/018-using-generative-bubble-sort.html"
+                        },
+                        "hash" : "using-generative-bubble-sort"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/019-sending-data-into-generators.html"
+                        },
+                        "hash" : "sending-data-into-generators"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/020-receiving-data-inside-generators.html"
+                        },
+                        "hash" : "receiving-data-inside-generators"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/021-throwing-exceptions-into-generators.html"
+                        },
+                        "hash" : "throwing-exceptions-into-generators"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/022-catching-exceptions-inside-generators.html"
+                        },
+                        "hash" : "catching-exceptions-inside-generators"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/023-generators-can-be-used-as-interruptible-functions.html"
+                        },
+                        "hash" : "generators-can-be-used-as-interruptible-functions"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/024-coroutines.html"
+                        },
+                        "hash" : "coroutines"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/025-time-for-some-code.html"
+                        },
+                        "hash" : "time-for-some-code"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/026-so-simple.html"
+                        },
+                        "hash" : "so-simple"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/027-recoil.html"
+                        },
+                        "hash" : "recoil"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/028-icicle.html"
+                        },
+                        "hash" : "icicle"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/029-mathematical.html"
+                        },
+                        "hash" : "mathematical"
+                    }),
+                    new Reflow.Page({
+                        "resources" : {
+                            "html" : "pages/030-thanks.html"
+                        },
+                        "hash" : "thanks"
+                    })
+                ],
+                "defaults" : {
+                    "animations" : {
+                        "show" : "none",
+                        "hide" : "none"
+                    }
+                },
+                "animations" : {
+                    "fade"       : new Reflow.Animation.Fade(),
+                    "horizontal" : new Reflow.Animation.Horizontal(),
+                    "vertical"   : new Reflow.Animation.Vertical(),
+                    "none"       : new Reflow.Animation.None()
+                }
+            });
+
+            $(".content").bind("swipeone", function(e, modified) {
+                var reflow = Reflow.getInstance();
+
+                if (modified.direction.startX == -1) {
+                    reflow.next();
+                }
+
+                if (modified.direction.startY == -1) {
+                    reflow.next();
+                }
+
+                if (modified.direction.startX == 1) {
+                    reflow.previous();
+                }
+
+                if (modified.direction.startY == 1) {
+                    reflow.previous();
+                }
+            });
+
+            $(window).bind("keydown", function(e) {
+                var reflow = Reflow.getInstance();
+
+                if (e.which == 37) {
+                    reflow.previous();
+                }
+
+                if (e.which == 39) {
+                    reflow.next();
+                }
+            });
+        </script>
+    </body>
+</html>

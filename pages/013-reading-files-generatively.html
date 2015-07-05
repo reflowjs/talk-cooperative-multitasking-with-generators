@@ -1,0 +1,17 @@
+<div data-behaviors="center" data-center-vertical="true">
+    <code data-behaviors="highlight" data-highlight-language="php">
+        function lines($file) {
+            $handle = fopen($file, "r");
+
+            while (!feof($handle)) {
+                yield trim(fgets($handle));
+            }
+
+            fclose($handle);
+        }
+
+        foreach (lines(__FILE__) as $i => $line) {
+            printf("%s. %s &lt;br&gt;", $i, $line);
+        }
+    </code>
+</div>

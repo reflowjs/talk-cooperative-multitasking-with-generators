@@ -1,0 +1,15 @@
+<div data-behaviors="center" data-center-vertical="true">
+    <code data-behaviors="highlight" data-highlight-language="php">
+        [1, 6, 2, 5, 3, 4]
+
+        [{1, 6}, 2, 5, 3, 4] → [{1, 6}, 2, 5, 3, 4]
+
+        [1, {6, 2}, 5, 3, 4] → [1, {2, 6}, 5, 3, 4]
+
+        [1, 2, {6, 5}, 3, 4] → [1, 2, {5, 6}, 3, 4]
+
+        [1, 2, 5, {6, 3}, 4] → [1, 2, 5, {3, 6}, 4]
+
+        [1, 2, 5, 3, {6, 4}] → [1, 2, 5, 3, {4, 6}]
+    </code>
+</div>
