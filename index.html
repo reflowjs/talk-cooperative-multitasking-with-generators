@@ -21,24 +21,24 @@
             fontSpy("latoregular", {
                 "glyphs"  : "a",
                 "success" : function() {
-                    reflow.updateBehaviors();
+                    Reflow.getInstance().updateBehaviors();
                 }
             });
 
             fontSpy("droid_sans_monoregular", {
                 "glyphs"  : "a",
                 "success" : function() {
-                    reflow.updateBehaviors();
+                    Reflow.getInstance().updateBehaviors();
                 }
             });
 
             var reflow = new Reflow({
                 "target"        : ".content",
                 "adapter"       : new Reflow.Adapter.jQuery(),
-                "preloadAhead"  : 1,
-                "preloadBehind" : 1,
-                "unloadAhead"   : 3,
-                "unloadBehind"  : 3,
+                "preloadBefore" : 3,
+                "preloadAfter"  : 3,
+                "unloadBefore"  : 3,
+                "unloadAfter"   : 3,
                 "behaviors"     : {
                     "animation-fade-in"   : new Reflow.Behavior.Animation.FadeIn(),
                     "animation-fade-out"  : new Reflow.Behavior.Animation.FadeOut(),
@@ -252,34 +252,30 @@
             });
 
             $(".content").bind("swipeone", function(e, modified) {
-                var reflow = Reflow.getInstance();
-
                 if (modified.direction.startX == -1) {
-                    reflow.next();
+                    Reflow.getInstance().next();
                 }
 
                 if (modified.direction.startY == -1) {
-                    reflow.next();
+                    Reflow.getInstance().next();
                 }
 
                 if (modified.direction.startX == 1) {
-                    reflow.previous();
+                    Reflow.getInstance().previous();
                 }
 
                 if (modified.direction.startY == 1) {
-                    reflow.previous();
+                    Reflow.getInstance().previous();
                 }
             });
 
             $(window).bind("keydown", function(e) {
-                var reflow = Reflow.getInstance();
-
                 if (e.which == 37) {
-                    reflow.previous();
+                    Reflow.getInstance().previous();
                 }
 
                 if (e.which == 39) {
-                    reflow.next();
+                    Reflow.getInstance().next();
                 }
             });
         </script>
